@@ -30,7 +30,7 @@ const SignUp = () => {
     </div>
   </div>
 </form>
-    </>)
+</>)
 }
 
 export default SignUp
