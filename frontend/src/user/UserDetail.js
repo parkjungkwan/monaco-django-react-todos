@@ -2,14 +2,7 @@ import React from 'react'
 
 const UserDetail = () => {
     return (<>
-        <nav>
-          <Router>
-            <Link to="/">Home</Link><br/>
-            <Link to="/">Blog</Link><br/>
-            <Link to="/">About Me</Link><br/>
-            <Link to="">Go to Google</Link><br/>
-          </Router>
-        </nav>
+ 
         
         <h1>첫번째 크기 헤드라인</h1>
         <h2>두번째 크기 헤드라인</h2>
