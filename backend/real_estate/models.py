@@ -1,3 +1,4 @@
-from common.models import DataTransferObject
-class HousingDto(object):
+
+class HousingDTO(object):
+
     pass

@@ -1,10 +1,11 @@
 from real_estate.services import HousingService
-from common.models import DataTransferObject
+from real_estate.models import HousingDTO
 
 
 class HousingApi(object):
 
-    def print_this(self, this):
+    @staticmethod
+    def print_this(this):
         print('*'*100)
         print(f'1. Housing 의 type \n {type(this)} ')
         print(f'2. Housing 의 column \n {this.columns} ')
@@ -15,9 +16,9 @@ class HousingApi(object):
     @staticmethod
     def main():
         util = HousingService()
-        dto = DataTransferObject()
+        dto = HousingDTO()
         while 1:
-            menu = input('0-Exit 1-모델생성 \n'
+            menu = input('0-Exit 1- 데이터프레임생성 \n'
                          '2-구군에서 None삭제\n'
                          '3-')
             if menu == '0':
