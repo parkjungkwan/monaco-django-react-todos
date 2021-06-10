@@ -12,7 +12,7 @@ class Crime_API(object):
             if menu == '0':
                 break
             elif menu == '1':
-                crimeService.show_file({'context':'./data/', 'fname':'cctv_in_seoul'})
+                crimeService.csv({'context':'./data/', 'fname':'cctv_in_seoul'})
             elif menu == '2':
                 pass
             elif menu == '3':
