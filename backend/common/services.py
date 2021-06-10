@@ -1,14 +1,11 @@
 import json
 
 import pandas as pd
-from models import DataTransferObject
+from common.abstracts import PrinterBase, ReaderBase
 
+class Printer(PrinterBase):
 
-class CommonService(object):
-
-    dto = DataTransferObject()
-
-    def print_dframe(self, this):
+    def dframe(self, this):
         print('*' * 100)
         print(f'1. Target type \n {type(this)} ')
         print(f'2. Target column \n {this.columns} ')
@@ -16,18 +13,18 @@ class CommonService(object):
         print(f'4. Target null 의 갯수\n {this.isnull().sum()}개')
         print('*' * 100)
 
-    def new_file(self) -> str:
-        return self._context + self._fname
+class Reader(ReaderBase):
 
-    def csv_to_dframe(self) -> object:
-        return pd.read_csv(self.new_file(), encoding='UTF-8', thousands=',')
+    def new_file(self, file) -> str:
+        return file.context + file.fname
 
-    def xls_to_dframe(self, header, usecols) -> object:
-        return pd.read_excel(self.new_file(), encoding='UTF-8', header=header, usecols=usecols)
+    def csv(self, file) -> object:
+        return pd.read_csv(f'{self.new_file(file)}.csv', encoding='UTF-8', thousands=',')
 
-    def json_to_dframe(self) -> object:
-        return json.load(open(self.new_file(), encoding='UTF-8'))
+    def xls(self, file, header, usecols) -> object:
+        return pd.read_excel(f'{self.new_file(file)}.xls', encoding='UTF-8', header=header, usecols=usecols)
 
-    def create_gmaps(self):
-        pass
+    def json(self, file) -> object:
+        return json.load(open(f'{self.new_file(file)}.json', encoding='UTF-8'))
+
 

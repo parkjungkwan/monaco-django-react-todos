@@ -1,7 +1,16 @@
-from crime.models import CrimeDTO
-from common.services import CommonService
+from common.models import FileDTO
+from common.services import Printer, Reader
 
 
-class CrimeService(CommonService):
+class CrimeService(Printer, Reader):
 
-    pass
+    def show_file(self, payload):
+        printer = Printer()
+        reader = Reader()
+        file = FileDTO()
+        file.context = payload.get('context')
+        file.fname = payload.get('fname')
+        printer.dframe(reader.csv(file))
+
+
+
