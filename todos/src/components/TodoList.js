@@ -17,7 +17,7 @@ const TodoList = () => {
             {todo.complete 
             ? <span style={{textDecoration: "line-through"}}>{todo.name}</span> 
             : <span>{todo.name}</span>
-            } 
+            }  
             <button onClick={deleteTodo.bind(null, todo.id)}> X </button>       
         </div>
     </div>))}
