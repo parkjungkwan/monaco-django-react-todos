@@ -1,10 +1,10 @@
 import React from 'react'
 import { Redirect, Route } from "react-router-dom"
 import { Login, Signup, UserDetail, UserEdit,UserList  } from 'user'
-import { Home, User, Counter } from './templates'
+import { Home, User, Counter } from 'templates'
 import { Nav } from 'common'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { todoReducer } from './store'
+import { todoReducer } from 'store'
 import { createStore, combineReducers} from 'redux'
 import { Provider } from 'react-redux'
 const rootReducer = combineReducers({todoReducer})
