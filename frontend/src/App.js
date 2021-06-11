@@ -14,15 +14,17 @@ const App = () => {
     <Router>
       <Provider store = {createStore(rootReducer)}>
         <Nav/>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/home' component={Home}/>
         <Redirect exact from={'/'} to={'/home'}/>
         <Route exact path='/counter' component={Counter}/>
         <Route exact path='/user' component={User}/>
+        
         <Route exact path='/login' component={Login}/>
         <Route exact path='/signup' component={Signup}/>
         <Route exact path='/user-detail' component={UserDetail}/>
         <Route exact path='/user-edit' component={UserEdit}/>
         <Route exact path='/user-list' component={UserList}/>
+        
       </Provider>
     </Router>
   </div>)
