@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const UserMenu = () => {<nav>
+export const UserMenu = () => (<nav>
         <ol>
             <li><Link to='/signup-form'>회원가입</Link></li>
             <li><Link to='/login-form'>로그인</Link></li>
@@ -11,8 +11,8 @@ export const UserMenu = () => {<nav>
         </ol>
 </nav>
 
-}
-export const ItemMenu = () => {<nav>
+)
+export const ItemMenu = () => (<nav>
     <ol>
         <li><Link to='/item-list'>아이템 목록</Link></li>
         <li><Link to='/item-register'>아이템 등록</Link></li>
@@ -21,8 +21,8 @@ export const ItemMenu = () => {<nav>
     </ol>
 </nav>
 
-}
-export const ArticleMenu = () => {<nav>
+)
+export const ArticleMenu = () => (<nav>
     <ol>
         <li><Link to='/article-list'>게시글 목록</Link></li>
         <li><Link to='/article-write'>게시글 쓰기</Link></li>
@@ -31,4 +31,4 @@ export const ArticleMenu = () => {<nav>
     </ol>
 </nav>
 
-}
+)
